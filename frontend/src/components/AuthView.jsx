@@ -94,7 +94,7 @@ export default function AuthView({ setAuth }) {
     try {
       if (isLogin) {
         // LOGIN: FastAPI OAuth2 standard (Form Data)
-        const response = await fetch('http://localhost:8000/api/login', {
+        const response = await fetch('https://codecureai-backend.onrender.com/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({ 

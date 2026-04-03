@@ -1,6 +1,6 @@
 import { getToken } from './auth';
 
-const BASE_URL = 'http://localhost:8000/api'; // Adjust if your backend port differs
+const BASE_URL = 'https://codecureai-backend.onrender.com/api'; // Adjust if your backend port differs
 
 export const apiCall = async (endpoint, method = 'GET', body = null) => {
   const token = getToken();
