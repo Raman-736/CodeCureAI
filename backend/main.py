@@ -363,7 +363,7 @@ app = FastAPI(title="CodeCure Toxicity Predictor")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["https://codecureai-final-tg1d.onrender.com"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
