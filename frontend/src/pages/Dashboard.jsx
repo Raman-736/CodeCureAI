@@ -146,7 +146,7 @@ export default function Dashboard() {
       const headers = {};
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
-      const response = await fetch('http://127.0.0.1:8000/api/predict-batch', {
+      const response = await fetch('https://codecureai-backend.onrender.com/api/predict-batch', {
         method: 'POST',
         headers: headers,
         body: formData,
