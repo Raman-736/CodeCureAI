@@ -339,7 +339,6 @@ import io
 
 from rdkit import Chem
 from rdkit.Chem import Descriptors
-from chembl_webresource_client.new_client import new_client
 
 import torch
 import torch.nn.functional as F
@@ -442,6 +441,9 @@ def get_compound_data(smiles: str):
 
 def get_chembl_data(compound_name: str, smiles: str):
     try:
+        # Lazy import (prevents crash)
+        from chembl_webresource_client.new_client import new_client
+        
         molecule = new_client.molecule
         fields_to_pull = ['molecule_chembl_id', 'max_phase', 'molecule_type', 'black_box_warning', 'withdrawn_flag', 'first_approval', 'molecule_properties', 'indication_class']
         mols = molecule.filter(molecule_structures__canonical_smiles=smiles).only(fields_to_pull)
